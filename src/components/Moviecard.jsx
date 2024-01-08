@@ -2,7 +2,7 @@ import React from "react";
 
 const imageUrl = import.meta.env.VITE_IMG;
 
-const Moviecard = ({ movie, title, poster_path, release_date, vote_average}) => {
+const Moviecard = ({title, poster_path, release_date, vote_average, first_air_date, name}) => {
   // console.log(movie);
 
   return (
@@ -18,7 +18,9 @@ const Moviecard = ({ movie, title, poster_path, release_date, vote_average}) => 
         {vote_average}
       </div>
       <h2 className="text-bold text-xl mt-3">{title}</h2>
+      <h2 className="text-bold text-xl mt-3">{name}</h2>
       <p className="text-gray-400 text-sm mt-3">{release_date}</p>
+      <p className="text-gray-400 text-sm mt-3">{first_air_date}</p>
     </div>
   );
 };

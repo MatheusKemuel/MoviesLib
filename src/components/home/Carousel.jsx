@@ -26,7 +26,9 @@ const Carousel = () => {
   useEffect(() => {
     const topRatedUrl = `${moviesURL}top_rated?${apiKey}`;
     getTopRatedMovies(topRatedUrl);
-    // console.log(topRatedUrl);
+
+    console.log(topMovies)
+    
   }, []);
 
   return (
@@ -41,16 +43,15 @@ const Carousel = () => {
         pagination={true}
         modules={[Autoplay]}
         autoplay={{ delay: 3000 }}
-      >
+        >
         {topMovies.map((movie) => (
           <SwiperSlide key={movie.id}>
             <Moviecard
-              movie={movie}
               title={movie.title}
               poster_path={movie.poster_path}
               release_date={movie.release_date}
               vote_average={movie.vote_average}
-            />
+              />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -59,3 +60,4 @@ const Carousel = () => {
 };
 
 export default Carousel;
+

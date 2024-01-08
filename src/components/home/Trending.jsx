@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { useState, useEffect } from "react";
 
 // Import Swiper React components
@@ -13,28 +13,26 @@ import "swiper/css/bundle";
 
 import Moviecard from "../../components/Moviecard";
 
+function Trending() {
+  const [trending, setTrending] = useState([]);
 
-const Series = () => {
-  const [trendingMovies, setTrendingMovies] = useState([]);
-
-  const getTrendingMovies = async (url) => {
+  const getTrending = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
 
-    setTrendingMovies(data.results);
+    setTrending(data.results);
   };
 
   useEffect(() => {
-    const trendingMoviesUrl = `https://api.themoviedb.org/3/tv/popular?${apiKey}`;
-    getTrendingMovies(trendingMoviesUrl);
-    // console.log(trendingMoviesUrl);
+    const trendingUrl = `https://api.themoviedb.org/3/trending/all/week?${apiKey}&append_to_response=videos`;
+    getTrending(trendingUrl);
   }, []);
 
-  // console.log(trendingMovies)
+   console.log(trending);
 
   return (
     <div className="movies_home">
-      <h2 className="my-10 text-3xl font-bold">Séries</h2>
+      <h2 className="my-10 text-3xl font-bold">Popular</h2>
       <Swiper
         spaceBetween={50}
         slidesPerView={4.5}
@@ -42,7 +40,7 @@ const Series = () => {
         // onSwiper={(swiper) => console.log(swiper)}
         pagination={true}
       >
-        {trendingMovies.map((movie) => (
+        {trending.map((movie) => (
           <SwiperSlide key={movie.id}>
             <Moviecard
               name={movie.name}
@@ -59,4 +57,4 @@ const Series = () => {
   );
 }
 
-export default Series
+export default Trending;
