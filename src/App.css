@@ -5,14 +5,37 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    color: white;
+    
+    transition: .2s;
 }
 
 html {
     background-color: rgb(27, 27, 27);
+    scroll-behavior: smooth;
 }
 
 .container {
     max-width: 1700px;
+    margin: 0 auto;
+}
+
+.img-card-movies {
+    box-shadow: 8px 8px 20px -9px purple;
+}
+
+.footer {
+    margin: 0 auto;
+}
+
+.login_container {
+    height: 500px;
+    width: 450px;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 100px;
+}
+
+.login-text {
     margin: 0 auto;
 }

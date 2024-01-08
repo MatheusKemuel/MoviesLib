@@ -9,6 +9,8 @@ import Home from './pages/Home.jsx'
 import Filmes from './pages/Filmes.jsx'
 import Series from './pages/Series.jsx'
 import Favorites from './pages/Favorites.jsx'
+import Login from './pages/Login.jsx'
+import Register from './pages/Register.jsx'
 
 const router = createBrowserRouter([
   {
@@ -30,7 +32,19 @@ const router = createBrowserRouter([
       {
         path: "favorites",
         element: <Favorites />
-      }
+      },
+      {
+        path: "login",
+        element: <Login />
+      },
+      {
+        path: "register",
+        element: <Register />
+      },
+      // {
+      //   path: "movie/:id",
+      //   element: <Movie />
+      // }
     ]
   }
 ])
