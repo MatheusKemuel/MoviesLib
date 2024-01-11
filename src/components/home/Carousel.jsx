@@ -3,7 +3,7 @@ import Moviecard from "../Moviecard";
 
 import { useEffect, useState } from "react";
 
-const moviesURL = import.meta.env.VITE_API;
+  const moviesURL = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
 
 // Import Swiper React components
@@ -24,13 +24,11 @@ const Carousel = () => {
   };
 
   useEffect(() => {
-    const topRatedUrl = `${moviesURL}top_rated?${apiKey}`;
+    const topRatedUrl = `${moviesURL}top_rated?${apiKey}&language=pt-BR`;
     getTopRatedMovies(topRatedUrl);
 
-    console.log(topMovies)
-    
   }, []);
-
+  
   return (
     <div className="mt-10">
       <h2 className="my-6 text-3xl font-bold">Melhores Avaliados</h2>
@@ -45,10 +43,14 @@ const Carousel = () => {
         autoplay={{ delay: 3000 }}
         >
         {topMovies.map((movie) => (
+          //console.log(movie),
           <SwiperSlide key={movie.id}>
             <Moviecard
+              id={movie.id}
+              movie={movie}
               title={movie.title}
               poster_path={movie.poster_path}
+              backdrop_path={movie.backdrop_path}
               release_date={movie.release_date}
               vote_average={movie.vote_average}
               />
@@ -60,4 +62,3 @@ const Carousel = () => {
 };
 
 export default Carousel;
-

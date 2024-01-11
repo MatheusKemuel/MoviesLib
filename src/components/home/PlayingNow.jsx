@@ -13,19 +13,19 @@ import "swiper/css/bundle";
 
 import Moviecard from "../../components/Moviecard";
 
-const Movies = () => {
-  const [trendingMovies, setTrendingMovies] = useState([]);
+const PlayingNow = () => {
+  const [playingNow, setPlayingNow] = useState([]);
 
-  const getTrendingMovies = async (url) => {
+  const getPlayingNow = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
 
-    setTrendingMovies(data.results);
+    setPlayingNow(data.results);
   };
 
   useEffect(() => {
-    const trendingMoviesUrl = `https://api.themoviedb.org/3/trending/all/day?${apiKey}&language=pt-BR`;
-    getTrendingMovies(trendingMoviesUrl);
+    const playingNowURL = `https://api.themoviedb.org/3/movie/now_playing?${apiKey}&language=pt-BR`;
+    getPlayingNow(playingNowURL);
     // console.log(trendingMoviesUrl);
   }, []);
 
@@ -33,7 +33,7 @@ const Movies = () => {
 
   return (
     <div className="movies_home">
-      <h2 className="my-10 text-3xl font-bold">Filmes</h2>
+      <h2 className="my-10 text-3xl font-bold">Lançados recente</h2>
       <Swiper
         spaceBetween={50}
         slidesPerView={4.5}
@@ -41,7 +41,7 @@ const Movies = () => {
         // onSwiper={(swiper) => console.log(swiper)}
         pagination={true}
       >
-        {trendingMovies.map((movie) => (
+        {playingNow.map((movie) => (
           <SwiperSlide key={movie.id}>
             <Moviecard
               id={movie.id}
@@ -58,4 +58,4 @@ const Movies = () => {
   );
 };
 
-export default Movies;
+export default PlayingNow;

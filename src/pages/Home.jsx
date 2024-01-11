@@ -5,12 +5,14 @@ import Trailers from '../components/home/Trailers'
 import Movies from '../components/home/Movies'
 import Series from '../components/home/Series'
 import Trending from '../components/home/Trending'
+import PlayingNow from '../components/home/PlayingNow'
 
 const Home = () => {
   return (
     <div className='container text-white'>
       <Banner />
       <Trending />
+      <PlayingNow />
       <Movies />
       <Series />
       <Carousel />

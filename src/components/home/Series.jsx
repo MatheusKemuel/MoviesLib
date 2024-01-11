@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { useState, useEffect } from "react";
 
 // Import Swiper React components
@@ -13,7 +13,6 @@ import "swiper/css/bundle";
 
 import Moviecard from "../../components/Moviecard";
 
-
 const Series = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
 
@@ -25,7 +24,7 @@ const Series = () => {
   };
 
   useEffect(() => {
-    const trendingMoviesUrl = `https://api.themoviedb.org/3/tv/popular?${apiKey}`;
+    const trendingMoviesUrl = `https://api.themoviedb.org/3/tv/popular?${apiKey}&language=pt-BR`;
     getTrendingMovies(trendingMoviesUrl);
     // console.log(trendingMoviesUrl);
   }, []);
@@ -45,6 +44,7 @@ const Series = () => {
         {trendingMovies.map((movie) => (
           <SwiperSlide key={movie.id}>
             <Moviecard
+              id={movie.id}
               name={movie.name}
               title={movie.title}
               poster_path={movie.poster_path}
@@ -57,6 +57,6 @@ const Series = () => {
       </Swiper>
     </div>
   );
-}
+};
 
-export default Series
+export default Series;

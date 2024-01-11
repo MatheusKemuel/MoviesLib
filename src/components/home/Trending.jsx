@@ -24,11 +24,11 @@ function Trending() {
   };
 
   useEffect(() => {
-    const trendingUrl = `https://api.themoviedb.org/3/trending/all/week?${apiKey}&append_to_response=videos`;
+    const trendingUrl = `https://api.themoviedb.org/3/movie/popular?${apiKey}&append_to_response=videos&language=pt-BR`;
     getTrending(trendingUrl);
   }, []);
 
-   console.log(trending);
+  //console.log(trending);
 
   return (
     <div className="movies_home">
@@ -43,6 +43,7 @@ function Trending() {
         {trending.map((movie) => (
           <SwiperSlide key={movie.id}>
             <Moviecard
+              id={movie.id}
               name={movie.name}
               title={movie.title}
               poster_path={movie.poster_path}

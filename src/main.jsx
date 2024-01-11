@@ -1,16 +1,19 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Home from './pages/Home.jsx'
-import Filmes from './pages/Filmes.jsx'
-import Series from './pages/Series.jsx'
-import Favorites from './pages/Favorites.jsx'
-import Login from './pages/Login.jsx'
-import Register from './pages/Register.jsx'
+import Home from "./pages/Home.jsx";
+import Filmes from "./pages/Filmes.jsx";
+import Series from "./pages/Series.jsx";
+import Favorites from "./pages/Favorites.jsx";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
+import Movie from "./pages/Movie.jsx";
+import Search from "./pages/Search.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -19,38 +22,46 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "/movies",
-        element: <Filmes />
+        element: <Filmes />,
       },
       {
         path: "/series",
-        element: <Series />
+        element: <Series />,
       },
       {
         path: "favorites",
-        element: <Favorites />
+        element: <Favorites />,
       },
       {
         path: "login",
-        element: <Login />
+        element: <Login />,
       },
       {
         path: "register",
-        element: <Register />
+        element: <Register />,
       },
-      // {
-      //   path: "movie/:id",
-      //   element: <Movie />
-      // }
-    ]
-  }
-])
+      {
+        path: "movie/:id",
+        element: <Movie />,
+      },
+      {
+        path: "/search",
+        element: <Search />
+      },
+    ],
+  },
+]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+import { AppProvider } from "./context/AppContext.jsx";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
-)
+    <AppProvider>
+      <RouterProvider router={router} />
+    </AppProvider>
+  </React.StrictMode>
+);
