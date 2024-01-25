@@ -1,20 +1,18 @@
 import React from "react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <div className="footer mt-16 bg-white h-56 flex items-center w-full absolute b-0">
       <div className="container">
-        <div className="flex justify-between items-center">
-          <p className="text-6xl text-black">
+        <div className="flex justify-between items-center flex-col  min-[768px]:flex-row  gap-8 min-[768px]:gap-0 ">
+          <p className="text-5xl sm:text-6xl text-black">
             <Link to="/">
               Movies<span className="text-purple-500">Lib</span>
             </Link>
           </p>
-          <ul className="flex gap-5">
+          <ul className="flex flex-col gap-5 min-[470px]:flex-row">
             <Link to="https://www.instagram.com/matheuskemuel/" target="_blank">
               <div className="flex items-center gap-1">
                 <svg
@@ -46,7 +44,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="absolute bottom-1 w-full flex justify-center text-gray-500 font-bold">Copyright &copy; 2024, Matheus Kemuel. All Rights Reserved.</div>
+      <div className="absolute bottom-1 w-full flex justify-center text-gray-500 font-bold text-[10px] text-center">Copyright &copy; 2024, Matheus Kemuel. All Rights Reserved.</div>
     </div>
   );
 };

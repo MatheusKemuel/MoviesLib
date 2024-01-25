@@ -26,15 +26,15 @@ function Movie({}) {
  
 
   return (
-    <div className=" bg-gray-100 h-full w-4/5 m-auto mt-32 movie-page-shadow flex rounded-2xl ">
-      <div className="h-[700px] w-4/6 object-fill rounded-l-2xl flex items-center justify-center">
+    <div className=" bg-gray-100 h-full w-4/5 m-auto mt-32 movie-page-shadow flex flex-col min-[1043px]:flex-row rounded-2xl ">
+      <div className="h-[700px] w-full object-fill rounded-l-2xl flex items-center justify-center">
         <img
           src={imageUrl + movie.backdrop_path}
           alt=""
-          className="h-[700px] w- rounded-l-2xl object-cover"
+          className="h-[700px] w-full rounded-l-2xl object-cover"
         />
       </div>
-      <div className=" w-2/4 p-6 border-l-4 border-purple-700">
+      <div className=" w-full p-6 max-[1143]:border-t-4 min-[1043px]:border-l-4 border-purple-700">
         <h1 className="mb-2 text-5xl font-bold text-purple-700">
           {movie.title}
         </h1>

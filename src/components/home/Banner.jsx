@@ -27,7 +27,7 @@ const Banner = () => {
         <div className="flex">
           <input
             type="text"
-            className="w-full h-14 rounded-s-3xl outline-none text-gray-600 p-5"
+            className="w-full h-14  rounded-s-3xl outline-none text-gray-600 p-5"
             placeholder="Pesquisar..."
             onChange={(e) => setSearch(e.target.value)}
             value={search}

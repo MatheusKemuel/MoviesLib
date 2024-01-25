@@ -22,9 +22,9 @@ const Filmes = () => {
   }, []);
 
   return (
-    <div className="text-white max-w-7xl m-auto pt-4 mt-20">
-      <h1 className="text-4xl">Top filmes hoje</h1>
-      <div className="grid grid-cols-4 mt-10 gap-10 text-white">
+    <div className="text-white max-w-7xl m-auto pt-4 mt-20 ">
+      <h1 className="text-4xl text-center min-[1273px]:text-left">Top filmes hoje</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-10 gap-10 text-white p-5">
         {trending.map((movie) => (
           //console.log(movie),
           <Moviecard

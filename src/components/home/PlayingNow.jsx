@@ -36,9 +36,21 @@ const PlayingNow = () => {
       <h2 className="my-10 text-3xl font-bold">Lançados recente</h2>
       <Swiper
         spaceBetween={50}
-        slidesPerView={4.5}
-        // onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
+        slidesPerView={1}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 4.5,
+            spaceBetween: 50,
+          },
+        }}
         pagination={true}
       >
         {playingNow.map((movie) => (

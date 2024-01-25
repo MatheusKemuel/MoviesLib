@@ -35,9 +35,21 @@ function Trending() {
       <h2 className="my-10 text-3xl font-bold">Popular</h2>
       <Swiper
         spaceBetween={50}
-        slidesPerView={4.5}
-        // onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
+        slidesPerView={1}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 4.5,
+            spaceBetween: 50,
+          },
+        }}
         pagination={true}
       >
         {trending.map((movie) => (
