@@ -13,6 +13,7 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Movie from "./pages/Movie.jsx";
 import Search from "./pages/Search.jsx";
+import Serie from "./pages/Serie.jsx";
 
 
 const router = createBrowserRouter([
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "movie/:id",
         element: <Movie />,
+      },
+      {
+        path: "serie/:id",
+        element: <Serie />
       },
       {
         path: "/search",

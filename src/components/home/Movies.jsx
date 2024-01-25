@@ -24,7 +24,7 @@ const Movies = () => {
   };
 
   useEffect(() => {
-    const trendingMoviesUrl = `https://api.themoviedb.org/3/trending/all/day?${apiKey}&language=pt-BR`;
+    const trendingMoviesUrl = `https://api.themoviedb.org/3/trending/movie/day?${apiKey}&language=pt-BR`;
     getTrendingMovies(trendingMoviesUrl);
     // console.log(trendingMoviesUrl);
   }, []);

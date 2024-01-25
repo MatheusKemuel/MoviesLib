@@ -1,25 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { formatDate } from '../helpers/utils'
+import { formatDate } from "../helpers/utils";
 
 const imageUrl = import.meta.env.VITE_IMG;
 
-const Moviecard = ({
+const SerieCard = ({
   id,
   title,
   poster_path,
-  release_date,
   vote_average,
   first_air_date,
   name,
 }) => {
   // console.log(movie);
 
-  const date = formatDate(release_date)
+  const date = formatDate(first_air_date);
 
   return (
     <div className="hover:scale-95 relative">
-      <Link to={`/movie/${id}`}>
+      <Link to={`/serie/${id}`}>
         {
           <img
             className="rounded-xl img-card-movies "
@@ -33,10 +32,9 @@ const Moviecard = ({
         <h2 className="text-bold text-xl mt-3">{title}</h2>
         <h2 className="text-bold text-xl mt-3">{name}</h2>
         <p className="text-gray-400 text-sm mt-3">{date}</p>
-        <p className="text-gray-400 text-sm mt-3">{first_air_date}</p>
       </Link>
     </div>
   );
 };
 
-export default Moviecard;
+export default SerieCard;

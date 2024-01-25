@@ -11,21 +11,21 @@ const apiKey = import.meta.env.VITE_API_KEY;
 
 import "swiper/css/bundle";
 
-import Moviecard from "../../components/Moviecard";
+import SerieCard from "../SerieCard";
 
 const Series = () => {
-  const [trendingMovies, setTrendingMovies] = useState([]);
+  const [trendingSeries, setTrendingSeries] = useState([]);
 
-  const getTrendingMovies = async (url) => {
+  const getTrendingSeries = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
-
-    setTrendingMovies(data.results);
+    console.log(data)
+    setTrendingSeries(data.results);
   };
 
   useEffect(() => {
-    const trendingMoviesUrl = `https://api.themoviedb.org/3/tv/popular?${apiKey}&language=pt-BR`;
-    getTrendingMovies(trendingMoviesUrl);
+    const trendingSeriesUrl = `https://api.themoviedb.org/3/trending/tv/day?${apiKey}&language=pt-BR`;
+    getTrendingSeries(trendingSeriesUrl);
     // console.log(trendingMoviesUrl);
   }, []);
 
@@ -41,16 +41,16 @@ const Series = () => {
         // onSwiper={(swiper) => console.log(swiper)}
         pagination={true}
       >
-        {trendingMovies.map((movie) => (
-          <SwiperSlide key={movie.id}>
-            <Moviecard
-              id={movie.id}
-              name={movie.name}
-              title={movie.title}
-              poster_path={movie.poster_path}
-              release_date={movie.release_date}
-              vote_average={movie.vote_average}
-              first_air_date={movie.first_air_date}
+        {trendingSeries.map((serie) => (
+          <SwiperSlide key={serie.id}>
+            <SerieCard
+              id={serie.id}
+              name={serie.name}
+              title={serie.title}
+              poster_path={serie.poster_path}
+              release_date={serie.release_date}
+              vote_average={serie.vote_average}
+              first_air_date={serie.first_air_date}
             />
           </SwiperSlide>
         ))}

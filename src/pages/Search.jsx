@@ -37,7 +37,7 @@ function Search() {
   };
 
   return (
-    <div className="max-w-7xl m-auto">
+    <div className="max-w-7xl m-auto mt-24">
         <form className="mt-5" onSubmit={handleSubmit}>
         <div className="flex">
           <input
