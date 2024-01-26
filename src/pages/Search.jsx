@@ -57,7 +57,7 @@ function Search() {
       <div>
         <h2 className="text-3xl p-5 text-white">Resultados para: {query}</h2>
       </div>
-      <div className="grid grid-cols-4 mt-10 gap-10 text-white">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-10 gap-10 text-white p-5">
         {movies.map((movie) => (
           //console.log(movie),
           <Moviecard

@@ -12,7 +12,6 @@ const Series = () => {
   const getSeries = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data)
     setSeries(data.results);
   };
 
@@ -26,7 +25,6 @@ const Series = () => {
       <h1 className="text-4xl">Top Séries hoje</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-10 gap-10 text-white p-5">
         {series.map((serie) => (
-         // console.log(serie),
           <SerieCard
             key={serie.id}
             id={serie.id}

@@ -36,7 +36,7 @@ const PlayingNow = () => {
       <h2 className="my-10 text-3xl font-bold">Lançados recente</h2>
       <Swiper
         spaceBetween={50}
-        slidesPerView={1}
+        slidesPerView={1.5}
         breakpoints={{
           640: {
             slidesPerView: 2,

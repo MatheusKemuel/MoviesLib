@@ -11,7 +11,7 @@ const Topbar = () => {
 
   const content = (
     <>
-      <div className="lg:hidden block absolute top-16 w-full left-0 right-0 bg-black transition">
+      <div className="md:hidden block absolute top-16 w-full left-0 right-0 bg-black transition">
         <ul className="text-center text-xl p-20">
           <Link to="/movies">
             <li className="my-4 py-4 border-b border-slate-800">Filmes</li>
@@ -33,7 +33,7 @@ const Topbar = () => {
           </Link>
         </p>
       </div>
-      <nav className="hidden min-[768px]:block absolute right-44">
+      <nav className="hidden md:block absolute right-44">
         <ul className="flex justify-between gap-10">
           <li className="text-xl hover:text-purple-400">
             <Link to="/movies">Filmes</Link>
@@ -48,7 +48,7 @@ const Topbar = () => {
         {click && content}
       </div>
 
-      <button className="block min-[768px]:hidden transition" onClick={handleClick}>
+      <button className="block md:hidden transition" onClick={handleClick}>
         {click ? <FaTimes /> : <CiMenuFries />}
       </button>
     </div>

@@ -35,7 +35,7 @@ const Carousel = () => {
 
       <Swiper
         spaceBetween={50}
-        slidesPerView={1}
+        slidesPerView={1.5}
         breakpoints={{
           640: {
             slidesPerView: 2,

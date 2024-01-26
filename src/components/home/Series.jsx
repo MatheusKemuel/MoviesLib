@@ -19,24 +19,22 @@ const Series = () => {
   const getTrendingSeries = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data)
     setTrendingSeries(data.results);
   };
 
   useEffect(() => {
     const trendingSeriesUrl = `https://api.themoviedb.org/3/trending/tv/day?${apiKey}&language=pt-BR`;
     getTrendingSeries(trendingSeriesUrl);
-    // console.log(trendingMoviesUrl);
   }, []);
 
-  // console.log(trendingMovies)
+
 
   return (
     <div className="movies_home">
       <h2 className="my-10 text-3xl font-bold">Séries</h2>
       <Swiper
         spaceBetween={50}
-        slidesPerView={1}
+        slidesPerView={1.5}
         breakpoints={{
           640: {
             slidesPerView: 2,
